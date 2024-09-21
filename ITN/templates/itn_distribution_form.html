@@ -27,11 +27,21 @@
                 <label for="number_of_family_members">Number of family members:</label>
                 {{ form.number_of_family_members }}
             </div>
+            {% if form.number_of_family_members.errors %}
+                <div class="error">
+                    {{ fform.number_of_family_members.errors }}
+                </div>
+            {% endif %}
 
             <div class="form-group">
                 <label for="itns_distributed">ITNs distributed:</label>
                 {{ form.itns_distributed }}
             </div>
+            {% if form.itns_distributed.errors %}
+                <div class="error">
+                    {{ form.itns_distributed.errors }}
+                </div>
+            {% endif %}
 
             <div class="form-group">
                 <label for="distribution_date">Distribution date:</label>
