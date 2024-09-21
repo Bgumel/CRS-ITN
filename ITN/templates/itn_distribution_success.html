@@ -1,0 +1,12 @@
+{% extends "itn_base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="success-box">
+        <h2>ITN Distribution Data Submitted Successfully</h2>
+        <p>Please Provide Health Education to the beneficiary on Net Use.</p>
+        <a href="{% url 'ITN:itn_distribution_form' %}" class="btn-primary">Submit another record</a>
+        <a href="{% url 'ITN:itn_distribution_form' %}" class="btn-primary">View My Distribution</a>
+    </div>
+</div>
+{% endblock content %}

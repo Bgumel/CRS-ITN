@@ -1,0 +1,109 @@
+/* Container Styling */
+.auth-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+/* Headings */
+.auth-container h2 {
+    margin-bottom: 20px;
+    color: #004165; /* CRS ITN brand color */
+}
+
+/* Form Styling */
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container label {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.auth-container button {
+    background-color: #004165; /* CRS ITN brand color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-container button:hover {
+    background-color: #2a6c8d; /* Darker shade for hover */
+}
+
+/* Links */
+.auth-container a {
+    color: #004165; /* CRS ITN brand color */
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: #004165;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #2a6c8d;
+}
+
+
+
+h2 {
+    color: #004165; /* CRS ITN Brand Color */
+    text-align: center;
+    margin-bottom: 20px;
+}

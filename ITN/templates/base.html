@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRS || ITN Distribution</title>
+    {% load static %}
+    <link rel="stylesheet" href=" {% static "css/styles.css" %}">
+    
+    {%block css%}
+    {%endblock css%}
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">CRS ITN Distribution</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url "ITN:support" %}">Support</a></li>
+            {% if user.is_authenticated            %}
+
+            <li><a href="#services">New Distribution</a></li>
+            <li><a href="{% url "ITN:distributions" %}">My Distributions</a></li>
+            <li><form id="frm_logout" method="post" action="{% url 'ITN:logout' %}">     {% csrf_token %}     <a  href="javascript:document.getElementById('frm_logout').submit();" >logout</a> </form></li>
+            
+            {% else %}
+            <li><a href="/accounts/login">Login</a></li>
+            <li><a href="/register">register</a></li>
+            
+            {% endif %}
+        </ul>
+    </nav>
+
+    {%block content%}
+    {%endblock content%}
+</body>
+</html>

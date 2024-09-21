@@ -1,0 +1,49 @@
+{% extends "itn_base.html" %}
+
+{% block  content %}
+    <div class="form-container">
+        <h2>ITN Distribution Form</h2>
+        
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="household_id">Household ID:</label>
+                {{ form.household_id }}
+            </div>
+
+            {% if form.household_id.errors %}
+                <div class="error">
+                    {{ form.household_id.errors }}
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="household_head_name">Household head name:</label>
+                {{ form.household_head_name }}
+            </div>
+
+            <div class="form-group">
+                <label for="number_of_family_members">Number of family members:</label>
+                {{ form.number_of_family_members }}
+            </div>
+
+            <div class="form-group">
+                <label for="itns_distributed">ITNs distributed:</label>
+                {{ form.itns_distributed }}
+            </div>
+
+            <div class="form-group">
+                <label for="distribution_date">Distribution date:</label>
+                {{ form.distribution_date }}
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+{% endblock content %}

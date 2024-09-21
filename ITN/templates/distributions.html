@@ -1,0 +1,34 @@
+{% extends "itn_base.html" %}
+
+{% block content %}
+    <div class="table_container">
+        <h2>My ITN Distributions</h2>
+
+        {% if distributions %}
+            <table class="distribution-table">
+                <thead>
+                    <tr>
+                        <th>HH ID</th>
+                        <th>HH Name</th>
+                        <th># of Family Members</th>
+                        <th>ITNs Distributed</th>
+                        <th>Distribution Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for distribution in distributions %}
+                    <tr>
+                        <td>{{ distribution.household_id }}</td>
+                        <td>{{ distribution.household_head_name }}</td>
+                        <td>{{ distribution.number_of_family_members }}</td>
+                        <td>{{ distribution.itns_distributed }}</td>
+                        <td>{{ distribution.distribution_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No distributions found.</p>
+        {% endif %}
+    </div>
+{% endblock content %}
