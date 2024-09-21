@@ -33,7 +33,7 @@ def itn_distribution_view(request):
         form = ITNDistributionForm(request.POST)
         if form.is_valid():
             itn_distribution = form.save(commit=False)
-            itn_distribution.distributor = request.user  # Set the distributor as the logged-in user
+            itn_distribution.distributor_id = request.user  # Set the distributor as the logged-in user
             itn_distribution.save()
             return redirect('/itn-distribution-success/')  # Redirect to a success page
     else:
@@ -51,7 +51,7 @@ def itn_distribution_success(request):
 @login_required
 def distributions(request):
     # Filter ITN distributions for the logged-in user 
-    distributions = ITNDistribution.objects.filter(distributor=request.user)
+    distributions = ITNDistribution.objects.filter(distributor_id=request.user)
     
     return render(request, 'distributions.html', {'distributions': distributions})
 
