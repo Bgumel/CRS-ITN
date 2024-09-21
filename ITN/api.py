@@ -24,11 +24,9 @@ def create_itn_distribution(request, payload: ITNDistributionSchema):
             distributor_id=payload.distributor_id  # Save User object
         )
         
-        
         # Return serialized data, including full User object
         return 201, distribution
         
-    
     except Exception as e:
         return 400, f"Error creating ITN distribution: {str(e)}"
 
