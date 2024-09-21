@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-from ninja import NinjaAPI, Redoc
+from ninja import NinjaAPI
 from ITN.api import router as itn_router
 
 api = NinjaAPI(title="ITN Distribution API",
