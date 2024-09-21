@@ -16,7 +16,9 @@
         <div class="nav-brand">CRS ITN Distribution</div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
+            
             <li><a href="{% url "ITN:support" %}">Support</a></li>
+            <li><a href="/api/docs">API Docs</a></li>
             {% if user.is_authenticated            %}
 
             <li><a href="#services">New Distribution</a></li>
