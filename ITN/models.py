@@ -11,7 +11,7 @@ class ITNDistribution(models.Model):
     number_of_family_members = models.PositiveIntegerField()
     itns_distributed = models.PositiveIntegerField()
     distribution_date = models.DateField()
-    distributor_id = models.ForeignKey(User, on_delete=models.CASCADE)  # Link to the User model
+    distributor_id = models.IntegerField( )  # Link to the User
 
     def __str__(self):
         return f"{self.household_id} - {self.household_head_name} distributed by {self.distributor.username}"
