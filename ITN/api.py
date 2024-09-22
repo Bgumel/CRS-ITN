@@ -31,7 +31,7 @@ def create_itn_distribution(request, payload: ITNDistributionSchema):
         return 400, f"Error creating ITN distribution: {str(e)}"
 
 
-# GET endpoint to retrieve all ITN distribution data
+# GET endpoint to retrieve all ITN distributions
 @router.get("/distributions/", response={200: list[ITNDistributionSchema], 400: str})
 def get_itn_distributions(request):
     try:
@@ -40,3 +40,17 @@ def get_itn_distributions(request):
     except Exception as e:
         return 400, f"Error retrieving ITN distributions: {str(e)}"
 
+
+#GET endpoint to retrieve ITN distribution records by distributor_id
+@router.get("/distributions/by_distributor/", response={200: list[ITNDistributionSchema], 404: str})
+def get_distributions_by_distributor(request, distributor_id: int):
+    try:
+        # Fetch distributions for the given distributor_id
+        distributions = ITNDistribution.objects.filter(distributor_id=distributor_id)
+        
+        if not distributions.exists():
+            return 404, f"No distributions found for distributor_id: {distributor_id}"
+        
+        return 200, distributions
+    except Exception as e:
+        return 404, f"Error retrieving distributions: {str(e)}"
