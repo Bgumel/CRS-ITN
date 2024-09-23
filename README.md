@@ -141,7 +141,7 @@ Retrieve  ITN distribution records by distributor_id in JSON format.
 
 ### API Documentation and Intractive Testing
 
-You can view the API documentation in your browser at [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs).
+You can view the API documentation in your browser once you set it up on localhost at [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs).
 
 
 
