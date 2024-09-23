@@ -23,6 +23,10 @@ This is a web-based application for managing ITN (Insecticide-Treated Nets) dist
 
 ### Prerequisites
 
+Python: Ensure Python 3.x is installed on your machine. You can download it from Python.org.
+Django: You will need Django installed, which you can get via pip.
+SQLite: It comes bundled with Python, so no separate installation is required.
+
 - Python 3.x
 - Django
 - Ninja API
@@ -37,8 +41,9 @@ This is a web-based application for managing ITN (Insecticide-Treated Nets) dist
 
 2. **Create and activate a virtual environment**:
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   python -m venv venv
+   source venv/bin/activate
+   # On Windows use: `venv\Scripts\activate`
    ```
 
 3. **Install dependencies**:
@@ -51,12 +56,9 @@ This is a web-based application for managing ITN (Insecticide-Treated Nets) dist
    python manage.py migrate
    ```
 
-5. **Create a superuser** (for admin access):
-   ```bash
-   python manage.py createsuperuser
-   ```
 
-6. **Run the development server**:
+
+5. **Run the development server**:
    ```bash
    python manage.py runserver
    ```
@@ -110,6 +112,50 @@ Retrieve all ITN distribution records in JSON format.
   }
 ]
 ```
+### **GET** `/api/distributions/`
+
+Retrieve all ITN distribution records in JSON format.
+
+#### Example Response:
+```json
+[
+  {
+    "household_id": "HH123",
+    "household_head_name": "John Doe",
+    "number_of_family_members": 5,
+    "itns_distributed": 3,
+    "distribution_date": "2024-09-19",
+    "distributor_id": 1
+    }
+  }
+]
+```
+### **GET** `/api/distributions/by_distributor/`
+
+Retrieve  ITN distribution records by distributor_id in JSON format.
+
+#### Example Response:
+```json
+[
+  {
+    "household_id": "1",
+    "household_head_name": "Sadiq",
+    "number_of_family_members": 2,
+    "itns_distributed": 20,
+    "distribution_date": "2024-09-23",
+    "distributor_id": 1
+  },
+  {
+    "household_id": "12",
+    "household_head_name": "Sani",
+    "number_of_family_members": 1,
+    "itns_distributed": 1,
+    "distribution_date": "2024-09-23",
+    "distributor_id": 1
+  }
+]
+```
+
 
 ### API Documentation
 
