@@ -21,7 +21,7 @@
             <li><a href="/api/docs">API Docs</a></li>
             {% if user.is_authenticated            %}
 
-            <li><a href="#services">New Distribution</a></li>
+            <li><a href="{% url "ITN:itn_distribution_form" %}">New Distribution</a></li>
             <li><a href="{% url "ITN:distributions" %}">My Distributions</a></li>
             <li><form id="frm_logout" method="post" action="{% url 'ITN:logout' %}">     {% csrf_token %}     <a  href="javascript:document.getElementById('frm_logout').submit();" >logout</a> </form></li>
             
