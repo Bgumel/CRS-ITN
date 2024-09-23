@@ -112,24 +112,6 @@ Retrieve all ITN distribution records in JSON format.
   }
 ]
 ```
-### **GET** `/api/distributions/`
-
-Retrieve all ITN distribution records in JSON format.
-
-#### Example Response:
-```json
-[
-  {
-    "household_id": "HH123",
-    "household_head_name": "John Doe",
-    "number_of_family_members": 5,
-    "itns_distributed": 3,
-    "distribution_date": "2024-09-19",
-    "distributor_id": 1
-    }
-  }
-]
-```
 ### **GET** `/api/distributions/by_distributor/`
 
 Retrieve  ITN distribution records by distributor_id in JSON format.
@@ -157,7 +139,7 @@ Retrieve  ITN distribution records by distributor_id in JSON format.
 ```
 
 
-### API Documentation
+### API Documentation and Intractive Testing
 
 You can view the API documentation in your browser at [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs).
 
