@@ -5,11 +5,6 @@ from .models import ITNDistribution
 from .schemas import ITNDistributionSchema
 from ninja.errors import HttpError
 from django.contrib.auth.models import User
-from ninja.security import APIKeyQuery
-
-
-
-api_key = ApiKey()
 
 router = Router()
 
