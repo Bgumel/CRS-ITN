@@ -1,5 +1,7 @@
 from django import forms
 from .models import ITNDistribution
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class ITNDistributionForm(forms.ModelForm):
     class Meta:
@@ -24,3 +26,14 @@ class ITNDistributionForm(forms.ModelForm):
         if itns < 1:
             raise forms.ValidationError("At least 1 ITN must be distributed.")
         return itns
+    
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2']
+
+    def __init__(self, *args, **kwargs):
+        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
+        # Override the help text for the username field
+        self.fields['username'].help_text = "<br>Letters, digits and @/./+/-/_ only."  # Remove the help text completely
+

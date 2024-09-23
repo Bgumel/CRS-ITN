@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import ITNDistributionForm
+from .forms import ITNDistributionForm, CustomUserCreationForm
 from .models import ITNDistribution
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -15,12 +15,12 @@ def Index(request):
 #auth user creation
 def register(request):
     if request.method == "POST":
-        form =UserCreationForm(request.POST or None)
+        form =CustomUserCreationForm(request.POST or None)
         if form.is_valid():
             form.save()
             return redirect('/login') 
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
 
     return render(request, "registration/register.html", {"form":form})
 
