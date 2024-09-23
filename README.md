@@ -32,7 +32,7 @@ This is a web-based application for managing ITN (Insecticide-Treated Nets) dist
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Bgumel/CRS-ITN.git
-   cd itn-distribution-system
+   cd CRS-ITN
    ```
 
 2. **Create and activate a virtual environment**:
@@ -105,9 +105,7 @@ Retrieve all ITN distribution records in JSON format.
     "number_of_family_members": 5,
     "itns_distributed": 3,
     "distribution_date": "2024-09-19",
-    "distributor": {
-      "id": 1,
-      "username": "distributor1"
+    "distributor_id": 1
     }
   }
 ]
