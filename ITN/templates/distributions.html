@@ -1,11 +1,29 @@
 {% extends "itn_base.html" %}
-
+{% block js %}
+<script src=
+"https://code.jquery.com/jquery-3.6.4.min.js">
+    </script>
+    <!-- table2excel jQuery plugin CDN -->
+    <script src=
+"//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js">
+    </script>
+{% endblock js %}
 {% block content %}
+  <script src=
+"https://code.jquery.com/jquery-3.6.4.min.js">
+    </script>
+    <!-- table2excel jQuery plugin CDN -->
+    <script src=
+"//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js">
+    </script>
     <div class="table_container">
         <h2>My ITN Distributions</h2>
+        <h2><button id="dwnldBtn">
+            Export as Excel
+    </button></h2>
 
         {% if distributions %}
-            <table class="distribution-table">
+            <table id="distribution" class="distribution-table">
                 <thead>
                     <tr>
                         <th>HH ID</th>
@@ -23,6 +41,8 @@
                         <td>{{ distribution.number_of_family_members }}</td>
                         <td>{{ distribution.itns_distributed }}</td>
                         <td>{{ distribution.distribution_date }}</td>
+                        
+
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -30,5 +50,16 @@
         {% else %}
             <p>No distributions found.</p>
         {% endif %}
+        
+</center>
+<script>
+    $(document).ready(function () {
+        $('#dwnldBtn').on('click', function () {
+            $("#distribution").table2excel({
+                filename: "DistributionData.xls"
+            });
+        });
+    });
+</script>
     </div>
 {% endblock content %}
